@@ -68,5 +68,5 @@ jobs:
       with:
         context: "."
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/fastapi:{{ github.sha }}
+        tags: yshmael01/fastapi:{{ github.sha }}
         file: "Dockerfile"  
