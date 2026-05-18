@@ -45,7 +45,7 @@ jobs:
           --config configs/model_config.yaml \
           --data data/processed/featured_house_data.csv \
           --models-dir models \
-          --mlflow-tracking-url http://localhost:5555
+          --mlflow-tracking-uri http://localhost:5555
 
     - name: Cleanup MLflow Tracking Server
       run: |
