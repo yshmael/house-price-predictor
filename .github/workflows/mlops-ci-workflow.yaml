@@ -28,10 +28,10 @@ jobs:
 
     - name: Run Data Processing Tests
       run: |
-        python src/data/run_processing.py
-        --input data/processed/cleaned_house_data.csv \
-        --output data/processed/featured_house_data.csv \
-        --preprocessor models/trained/preprocessor.pkl
+        python src/data/run_processing.py \
+          --input data/processed/cleaned_house_data.csv \
+          --output data/processed/featured_house_data.csv \
+          --preprocessor models/trained/preprocessor.pkl
 
     - name: Start MLflow Tracking Server
       run: |
@@ -42,10 +42,10 @@ jobs:
     - name: Train the Model
       run: |
         python src/models/train_model.py \
-        --config configs/model_config.yaml \    
-        --data data/processed/featured_house_data.csv \
-        --models-dir models \
-        --mlflow-tracking-url http://localhost:5555
+          --config configs/model_config.yaml \
+          --data data/processed/featured_house_data.csv \
+          --models-dir models \
+          --mlflow-tracking-url http://localhost:5555
 
     - name: Cleanup MLflow Tracking Server
       run: |
